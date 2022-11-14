@@ -64,10 +64,17 @@ export function search() {
 export function sort(type) {
   if (type == "ascending") {
     //Write your code here for sorting (ascending)    
-
+    newsSearchResults.sort(function(a, b){
+      if (a.toLowerCase().replace(re, "") < b.toLowerCase().replace(re, "")) {return -1;}
+      if (a.toLowerCase().replace(re, "") > b.toLowerCase().replace(re, "")) {return 1;}
+    });
   } else {
     //Write your code here for sorting (descending)
-    
+    newsSearchResults.sort(function(a, b){
+      if (b.toLowerCase().replace(re, "") < a.toLowerCase().replace(re, "")) {return -1;}
+      if (b.toLowerCase().replace(re, "") > a.toLowerCase().replace(re, "")) {return 1;}
+    });
   }
+  
+  return newsSearchResults;
 }
-
