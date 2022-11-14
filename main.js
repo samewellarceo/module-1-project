@@ -19,10 +19,11 @@ export var newsList = [
 let newsSearchResults = newsList;
 let re = /[^a-z0-9\s]/g;
 
-export function search() {
+export function search(test_input) {
   // inputValue is the variable that contains the search string
   const inputValue = document.getElementById("search-input").value;
-  
+  // const inputValue = test_input; // Use this for automated testing.
+
   //Write your code here for the search function
   newsSearchResults = [];
   let lowRegNewsList = new Array();
